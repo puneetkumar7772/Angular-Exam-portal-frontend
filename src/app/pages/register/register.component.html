@@ -1,0 +1,48 @@
+<p>
+  <mat-toolbar style="background-color: blueviolet;">
+    <span class="header">Online Exam Portal</span>
+  </mat-toolbar>
+</p>
+<div class="main_form">
+  <div>
+    <div>
+        <img class="login-image" src="../../../assets/1.jpeg" alt="Side Image">
+        <h3>Register Here</h3>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div class="login_section container">
+          <form class="login-form">
+            <div class="form-group">
+              <input class="form-control" type="text" id="text" name="Name" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" id="Username" name="Username" placeholder="Username" required>
+            </div>
+
+            <div class="form-group">
+              <input class="form-control" type="email" id="email" name="email" placeholder="email"  required>
+            </div>
+
+             <div class="form-group">
+              <input class="form-control" type="text" id="Coching Name" name="Coching Name" placeholder="Coching Name"  required>
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="password" id="password" name="password" placeholder="Password"  required>
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="password" id="confirmpassword" name="password" placeholder="Confirmed Password" required>
+            </div>
+
+            <button type="submit">Register</button>
+            <div class="signup-link">
+              <p>If you are alredy registered? <a routerLink="/">Login</a></p>
+             </div>
+          </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+<app-footer></app-footer>
