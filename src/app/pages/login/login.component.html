@@ -1,1 +1,33 @@
-<p>login works!</p>
+<p>
+  <mat-toolbar style="background-color: blueviolet;">
+    <span class="header">Online Exam Portal</span>
+  </mat-toolbar>
+</p>
+<div class="main_form">
+  <div>
+    <div>
+        <img class="login-image" src="../../../assets/7.jpg" alt="Side Image">
+        <h3>Login Here</h3>
+    </div>
+  </div>
+  <div style="margin-bottom: 5%;">
+    <div>
+      <div class="login_section container">
+          <form class="login-form">
+            <div class="form-group">
+              <input class="form-control" type="email" id="email" name="email" placeholder="email"  required>
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="password" id="password" name="password" placeholder="Password"  required>
+            </div>
+            <button type="submit">Login</button>
+            <div class="signup-link">
+              <p>If you are not  registered? <a routerLink="/register">Register</a></p>
+             </div>
+          </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+<app-footer></app-footer>

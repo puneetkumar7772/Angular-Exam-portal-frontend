@@ -10,6 +10,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     NavbarComponent,
     RegisterComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
