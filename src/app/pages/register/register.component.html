@@ -13,28 +13,27 @@
   <div style="margin-bottom: 5%;">
     <div>
       <div class="login_section container">
-          <form class="login-form">
+          <form class="login-form" [formGroup]="registrationForm" (ngSubmit)="registerUser()">
             <div class="form-group">
-              <input class="form-control" type="text" id="text" name="Name" placeholder="Full name" required>
+              <input class="form-control" type="text" id="text" name="Name" placeholder="Full name" formControlName="name" required>
             </div>
             <div class="form-group">
-              <input class="form-control" type="text" id="Username" name="Username" placeholder="Username" required>
+              <input class="form-control" type="text" id="Username" name="Username" placeholder="Username" formControlName="username" required>
             </div>
 
             <div class="form-group">
-              <input class="form-control" type="email" id="email" name="email" placeholder="email"  required>
+              <input class="form-control" type="email" id="email" name="email" placeholder="email" formControlName="email"  required>
             </div>
 
              <div class="form-group">
-              <input class="form-control" type="text" id="Coching Name" name="Coching Name" placeholder="Coching Name"  required>
+              <input class="form-control" type="text" id="Coching Name" name="Coching Name" placeholder="Coching Name" formControlName="cochingName"  required>
             </div>
             <div class="form-group">
-              <input class="form-control" type="password" id="password" name="password" placeholder="Password"  required>
+              <input class="form-control" type="password" id="password" name="password" placeholder="Password" formControlName="password"  required>
             </div>
             <div class="form-group">
-              <input class="form-control" type="password" id="confirmpassword" name="password" placeholder="Confirmed Password" required>
+              <input class="form-control" type="password" id="confirmpassword" name="password" placeholder="Confirmed Password" formControlName="confirmPassword" required>
             </div>
-
             <button type="submit">Register</button>
             <div class="signup-link">
               <p>If you are alredy registered? <a routerLink="/login">Login</a></p>
@@ -43,6 +42,5 @@
       </div>
     </div>
   </div>
-
 </div>
 <app-footer></app-footer>
