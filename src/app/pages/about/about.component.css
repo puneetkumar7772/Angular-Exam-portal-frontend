@@ -4,7 +4,7 @@
 }
 .navbar-brand{
   color:#fff;
-  font-size: 30px;
+  font-size: 25px;
   font-weight:500;
 }
 .nav-link:hover{
@@ -72,5 +72,6 @@ p{
     display: grid;
     grid-template-columns:100%;
     gap: 10px;
+
   }
 }

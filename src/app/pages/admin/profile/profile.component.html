@@ -1,0 +1,192 @@
+<mat-card style="margin-top: 15px;border-radius: 10px;background-color:lightblue;">
+<h1 class="text-center">Your Profile Details</h1>
+<!-- <mat-card-content>
+ <div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="container text-center">
+     <img src="../../../../assets/profile.png" alt="" width="10%">
+     <h1 style="padding-top: 7px;">Puneet Mishra</h1>
+    </div>
+    <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Username</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="puneet" readonly>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Institute name</label>
+          <input type="text" class="form-control" id="exampleInputPassword1"value="Adda247" readonly>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Email</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" value="mishra@gmail.com" readonly>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Admin Id</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" value="mishra123" readonly>
+        </div>
+        <button type="submit" class="btn btn-success">Update</button>
+
+      </form>
+    </div>
+    </div>
+  </div>
+ </div>
+</mat-card-content> -->
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container emp-profile" style="background-color:lightblue;">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file"/>
+                            </div>
+                        </div>
+                        <div   style="display: grid;grid-template-columns: 25% 25% 25% 25%;padding-left:57px;">
+                          <div>
+                            <button class="btn btn-primary">Follow</button>
+                          </div>
+                          <div>
+                            <button class="btn btn-primary">Subscribe</button>
+                          </div>
+                          <div style="padding-left: 25px;">
+                            <mat-icon class="material-symbols-outlined">
+                              share
+                            </mat-icon>
+                          </div>
+                          <div>
+                            <mat-icon class="material-symbols-outlined">
+                              thumb_up
+                            </mat-icon>
+                          </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h3>
+                                        Puneet mishra
+                                    </h3>
+                                    <h3>
+                                        Web Developer and Designer
+                                    </h3>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>User Id</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Kshiti123</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Kshiti Ghelani</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>kshitighelani@gmail.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>123 456 7890</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Profession</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Web Developer and Designer</p>
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Experience</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Expert</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Hourly Rate</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>10$/hr</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Total Projects</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>230</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>English Level</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Expert</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Availability</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>6 months</p>
+                                            </div>
+                                        </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Your Bio</label><br/>
+                                        <p>Your detail description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+</mat-card>
