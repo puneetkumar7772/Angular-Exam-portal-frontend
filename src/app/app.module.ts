@@ -20,6 +20,8 @@ import { ProfileComponent } from './pages/admin/profile/profile.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     DashboardComponent,
     SidebarComponent,
     ProfileComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    ViewCategoriesComponent,
+    ViewQuizzesComponent
   ],
   imports: [
     BrowserModule,
