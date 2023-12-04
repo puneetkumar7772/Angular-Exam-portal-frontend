@@ -22,6 +22,9 @@ import {MatListModule} from '@angular/material/list';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AddQuizzesComponent } from './pages/admin/add-quizzes/add-quizzes.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.co
     ProfileComponent,
     AddCategoryComponent,
     ViewCategoriesComponent,
-    ViewQuizzesComponent
+    ViewQuizzesComponent,
+    AddQuizzesComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.co
     ReactiveFormsModule,
     MatIconModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
