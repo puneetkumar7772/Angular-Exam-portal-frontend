@@ -1,2 +1,16 @@
 
-<mat-card style="margin-top: 15px;"><p style="color:blue;">Add-Category Works!</p></mat-card>
+<mat-card style="margin-top: 15px;border-radius: 10px;box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);height: 97%;">
+  <h1>Add New Categories</h1>
+    <div class="container">
+    <form>
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="category" placeholder="Category Name" required>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" rows="4" placeholder="Description" required></textarea>
+
+      <button type="submit">Add Category</button>
+    </form>
+  </div>
+
+</mat-card>

@@ -8,6 +8,8 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/admin/profile/profile.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
@@ -18,14 +20,12 @@ const routes: Routes = [
   {path:'admin',component:DashboardComponent,
   children:[
     {path:'profile',component:ProfileComponent},
-    {path:"category",component:AddCategoryComponent}
+    {path:"addcategory",component:AddCategoryComponent},
+    {path:"viewcategory",component:ViewCategoriesComponent},
+    {path:"viewquizzes",component:ViewQuizzesComponent},
 
   ]
 },
-
-
-
-
 
 ];
 

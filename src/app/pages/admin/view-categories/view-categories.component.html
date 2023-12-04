@@ -1,0 +1,123 @@
+
+<mat-card style="margin-top: 15px;border-radius: 10px;box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);">
+  <header>
+    <mat-icon>category</mat-icon>
+    <h1>All Categories</h1>
+    <button class="btn btn-success" routerLink="/admin/addcategory">Add Categories</button>
+  </header>
+
+  <main>
+
+  <div class="category-item" *ngFor="let data of category">
+   <div>
+    <mat-icon style="width: 86%;padding-left: 28px;">delete</mat-icon>
+   <mat-icon>create</mat-icon>
+   </div>
+      <h2>{{data.name}}</h2>
+      <p>{{data.description}}</p>
+      <mat-icon>trending_flat</mat-icon><br>
+    </div>
+    <div class="category-item">
+      <div>
+        <mat-icon style="width: 86%;padding-left: 28px;">delete</mat-icon>
+       <mat-icon>create</mat-icon>
+       </div>
+      <h2>Airthmetic</h2>
+      <p>Description for Category 2. Another sample description.</p>
+      <mat-icon>trending_flat</mat-icon>
+    </div>
+    <div class="category-item">
+      <div>
+        <mat-icon style="width: 86%;padding-left: 28px;">delete</mat-icon>
+       <mat-icon>create</mat-icon>
+       </div>
+      <h2>Reasoning</h2>
+      <p>Description for Category 1. This is a sample description.</p>
+      <mat-icon>trending_flat</mat-icon>
+    </div>
+    <div class="category-item">
+      <div>
+        <mat-icon style="width: 86%;padding-left: 28px;">delete</mat-icon>
+       <mat-icon>create</mat-icon>
+       </div>
+      <h2>Hindi</h2>
+      <p>Description for Category 2. Another sample description.</p>
+      <mat-icon>trending_flat</mat-icon>
+    </div>
+    <div class="category-item">
+      <div>
+        <mat-icon style="width: 86%;padding-left: 28px;">delete</mat-icon>
+       <mat-icon>create</mat-icon>
+       </div>
+      <h2>English</h2>
+      <p>Description for Category 1. This is a sample description.</p>
+      <mat-icon>trending_flat</mat-icon>
+    </div>
+    <div class="category-item">
+      <div>
+        <mat-icon style="width: 86%;padding-left: 28px;">delete</mat-icon>
+       <mat-icon>create</mat-icon>
+       </div>
+      <h2>Data structure</h2>
+      <p>Description for Category 2. Another sample description.</p>
+      <mat-icon>trending_flat</mat-icon>
+    </div>
+    <div class="category-item">
+      <div>
+        <mat-icon style="width: 86%;padding-left: 28px;">delete</mat-icon>
+       <mat-icon>create</mat-icon>
+       </div>
+      <h2>Java </h2>
+      <p>Description for Category 1. This is a sample description.</p>
+      <mat-icon>trending_flat</mat-icon>
+    </div>
+    <div class="category-item">
+      <div>
+        <mat-icon style="width: 86%;padding-left: 28px;">delete</mat-icon>
+       <mat-icon>create</mat-icon>
+       </div>
+      <h2>Java script</h2>
+      <p>Description for Category 2. Another sample description.</p>
+      <mat-icon>trending_flat</mat-icon>
+    </div>
+    <div class="category-item">
+      <div>
+        <mat-icon style="width: 86%;padding-left: 28px;">delete</mat-icon>
+       <mat-icon>create</mat-icon>
+       </div>
+      <h2>TGT and PGT</h2>
+      <p>Description for Category 1. This is a sample description.</p>
+      <mat-icon>trending_flat</mat-icon>
+    </div>
+    <div class="category-item">
+      <div>
+        <mat-icon style="width: 86%;padding-left: 28px;">delete</mat-icon>
+       <mat-icon>create</mat-icon>
+       </div>
+      <h2>History</h2>
+      <p>Description for Category 2. Another sample description.</p>
+      <mat-icon>trending_flat</mat-icon>
+    </div>
+    <div class="category-item">
+      <div>
+        <mat-icon style="width: 86%;padding-left: 28px;">delete</mat-icon>
+       <mat-icon>create</mat-icon>
+       </div>
+      <h2>Polity</h2>
+      <p>Description for Category 1. This is a sample description.</p>
+      <mat-icon>trending_flat</mat-icon>
+    </div>
+    <div class="category-item">
+      <div>
+        <mat-icon style="width: 86%;padding-left: 28px;">delete</mat-icon>
+       <mat-icon>create</mat-icon>
+       </div>
+      <h2>Banks Exam</h2>
+      <p>Description for Category 2. Another sample description.</p>
+      <mat-icon class="icon">trending_flat</mat-icon>
+    </div>
+    <!-- Add more category items as needed -->
+  </main>
+  <router-outlet></router-outlet>
+</mat-card>
+
