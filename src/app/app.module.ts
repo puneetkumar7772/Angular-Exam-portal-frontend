@@ -24,6 +24,12 @@ import { ViewCategoriesComponent } from './pages/admin/view-categories/view-cate
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddQuizzesComponent } from './pages/admin/add-quizzes/add-quizzes.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import { AppConfig } from '../../config';
+
 
 
 @NgModule({
@@ -53,9 +59,14 @@ import { AddQuizzesComponent } from './pages/admin/add-quizzes/add-quizzes.compo
     MatIconModule,
     MatCardModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

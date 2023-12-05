@@ -1,4 +1,4 @@
-
+/*
 .container {
   max-width: 500px;
   margin: 0px auto;
@@ -72,4 +72,8 @@ h1{
 .form-check-label{
   padding-top: 3px;
   padding-left: 5px;
+} */
+ .w-100{
+  width: 100%;
+  margin: auto;
 }
