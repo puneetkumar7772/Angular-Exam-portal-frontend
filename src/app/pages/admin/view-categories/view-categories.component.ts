@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-view-categories',
@@ -7,19 +8,24 @@ import { Component } from '@angular/core';
 })
 export class ViewCategoriesComponent {
 
+  constructor(private categoryservice:CategoryService){}
+  data:any=[]
+  ngOnInit(){
+this.getCategory()
+  }
 
-  category=[
-    {id:1,name:"Programing",description:"This is related to the programing"},
-    {id:2,name:"Ssc GD",description:"This is related to the Ssc GD"},
-    {id:3,name:"Genral English",description:"This is related to the Genral English"},
-    {id:4,name:"Programing",description:"This is related to the programing"},
-    {id:5,name:"Programing",description:"This is related to the programing"},
-    {id:6,name:"Programing",description:"This is related to the programing"},
-    {id:7,name:"Programing",description:"This is related to the programing"},
-    {id:8,name:"Programing",description:"This is related to the programing"},
-    {id:9,name:"Programing",description:"This is related to the programing"},
-    {id:10,name:"Programing",description:"This is related to the programing"},
-    {id:11,name:"Programing",description:"This is related to the programing"},
+  getCategory(){
+    this.categoryservice.viewCategory().subscribe((res)=>{
+      console.log("=======",res)
+      this.data=res;
+      console.log("99999",this.data)
+    })
+  }
 
-  ]
+  deleteCategory(id:number){
+   this.categoryservice.deleteCategory(id).subscribe((res)=>{
+    console.log("-------",res)
+    this.getCategory()
+   })
+  }
 }
