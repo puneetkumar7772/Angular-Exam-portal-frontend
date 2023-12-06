@@ -1,0 +1,47 @@
+<mat-card style="margin-top: 15px;height: 100%;">
+  <h1 style="text-align: center;">Add Quizze</h1>
+<div class="container">
+<div class="row">
+  <div class="col-md-10 offset-md-1" *ngIf="data">
+    <form [formGroup]="updateQuizForm">
+      <mat-form-field class="w-100">
+        <mat-label>Enter Title</mat-label>
+        <input  type="text" name="title" placeholder="Enter Title"  [(ngModel)]="data.quizzeTitle" formControlName="quizzeTitle"  matInput/>
+      </mat-form-field>
+      <mat-form-field class="w-100">
+        <mat-label>Enter Description</mat-label>
+        <textarea type="text" name="title" placeholder="Enter Title" row="5" formControlName="quizzeDescription" matInput></textarea>
+      </mat-form-field>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="w-100">
+            <mat-label>Number Of Question</mat-label>
+            <input type="text" name="numberOfQuestion" placeholder="Enter number Of Question" formControlName="numberOfQuestion" matInput/>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w-100">
+            <mat-label>Max-Marks</mat-label>
+            <input type="text" name="Marks" placeholder="Enter Marks" formControlName="maxMark" matInput/>
+          </mat-form-field>
+        </div>
+      </div>
+      <mat-radio-group aria-label="Select an option"  formControlName="status">
+        <mat-label style="color: black; font-weight: bold;font-size:17px;">Status</mat-label>
+        <mat-radio-button [value]="true" name="status">Active</mat-radio-button>
+        <mat-radio-button [value]="false"  name="status">Inactive</mat-radio-button>
+      </mat-radio-group>
+      <mat-form-field class="w-100">
+        <mat-label>--select--</mat-label>
+        <mat-select formControlName="category">
+          <mat-option value="{{value.category}}" *ngFor="let value of category ">{{value.category}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="container text-center">
+        <button mat-raised-button color="accent">Update Quizzes</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+</mat-card>

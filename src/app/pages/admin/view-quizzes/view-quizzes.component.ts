@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { QuizzesService } from "src/app/services/quizzes.service";
 
 @Component({
@@ -7,7 +8,7 @@ import { QuizzesService } from "src/app/services/quizzes.service";
   styleUrls: ["./view-quizzes.component.css"],
 })
 export class ViewQuizzesComponent {
-  constructor(private quizservice: QuizzesService) {}
+  constructor(private quizservice: QuizzesService, private router:Router) {}
 
   ngOnInit() {
     this.getQuizzes();
@@ -27,5 +28,13 @@ export class ViewQuizzesComponent {
       console.log("quiz deleted ");
       this.getQuizzes();
     });
+  }
+
+  navigate(id:number){
+    this.router.navigate(['/admin/updatequiz', id]);
+
+    // this.quizservice.getQuizById(id).subscribe((res)=>{
+    //   console.log("first",res)
+    // })
   }
 }

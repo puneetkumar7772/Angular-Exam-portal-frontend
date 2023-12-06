@@ -29,6 +29,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import { AppConfig } from '../../config';
+import { UpdatequizComponent } from './pages/admin/updatequiz/updatequiz.component';
 
 
 
@@ -47,7 +48,8 @@ import { AppConfig } from '../../config';
     AddCategoryComponent,
     ViewCategoriesComponent,
     ViewQuizzesComponent,
-    AddQuizzesComponent
+    AddQuizzesComponent,
+    UpdatequizComponent
   ],
   imports: [
     BrowserModule,
