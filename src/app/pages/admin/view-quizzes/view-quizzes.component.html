@@ -19,7 +19,7 @@
         <p style="color: red;padding-top: 10px;">Max-marks:{{value.maxMark}}</p>
         <p style="color: red;padding-top: 10px;">Display Question:-{{value.numberOfQuestion}}</p>
         <button mat-raised-button color="" style="background-color: lightgreen;">Attampts</button>
-        <button mat-raised-button color="" style="background-color: lightskyblue;">Update</button>
+        <button mat-raised-button color="" style="background-color: lightskyblue;"  routerLink ="['/admin/updatequiz', value._id]" (click)="navigate(value._id)">Update</button>
         <button mat-raised-button color="warn" (click)="deleteQuiz(value._id)">delete</button>
       </div>
 
