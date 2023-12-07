@@ -30,6 +30,10 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import { AppConfig } from '../../config';
 import { UpdatequizComponent } from './pages/admin/updatequiz/updatequiz.component';
+import { ViewQuestionComponent } from './pages/admin/view-question/view-question.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
 
 
 
@@ -49,7 +53,10 @@ import { UpdatequizComponent } from './pages/admin/updatequiz/updatequiz.compone
     ViewCategoriesComponent,
     ViewQuizzesComponent,
     AddQuizzesComponent,
-    UpdatequizComponent
+    UpdatequizComponent,
+    ViewQuestionComponent,
+    AddQuestionComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,8 @@ import { UpdatequizComponent } from './pages/admin/updatequiz/updatequiz.compone
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    CKEditorModule
   ],
   providers: [
   ],

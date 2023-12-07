@@ -1,0 +1,11 @@
+
+#header {
+  background: url(../../../../assets/10.jpg) center center / cover no-repeat ;
+  height: 270px;
+}
+h1{
+  color:#fff;
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 20px;
+}
