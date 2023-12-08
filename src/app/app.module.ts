@@ -34,6 +34,9 @@ import { ViewQuestionComponent } from './pages/admin/view-question/view-question
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -56,7 +59,9 @@ import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.componen
     UpdatequizComponent,
     ViewQuestionComponent,
     AddQuestionComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    UserDashboardComponent,
+    UserSidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +78,8 @@ import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.componen
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    CKEditorModule
+    CKEditorModule,
+    MatSnackBarModule
   ],
   providers: [
   ],

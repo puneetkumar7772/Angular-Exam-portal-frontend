@@ -1,0 +1,10 @@
+.bootstrap-wrapper{
+  height: 93%;
+}
+
+@media screen and (max-width:1000px) and (mix-width:290px) {
+  .bootstrap-wrapper{
+    height: auto;
+  }
+
+}

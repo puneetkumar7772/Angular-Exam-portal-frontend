@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { CategoryService } from "src/app/services/category.service";
 import { QuizzesService } from "src/app/services/quizzes.service";
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: "app-add-quizzes",
@@ -15,7 +16,8 @@ export class AddQuizzesComponent {
     private fb: FormBuilder,
     private categoryservice: CategoryService,
     private quizzeservice: QuizzesService,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {
     this.addQuizForm = this.fb.group({
       quizzeTitle: ["", [Validators.required]],
@@ -43,6 +45,11 @@ export class AddQuizzesComponent {
     this.quizzeservice.addQuizzes(body).subscribe((res) => {
       console.log("6666666", res);
       console.log("quizze add successfully");
+      this.snackBar.open('Quiz Add successfully', 'Close', {
+        duration: 2000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+      });
       this.addQuizForm.reset();
       this.router.navigate(["/admin/viewquizzes"]);
     });

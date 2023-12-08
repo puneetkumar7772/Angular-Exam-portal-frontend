@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-add-category',
@@ -12,7 +14,13 @@ export class AddCategoryComponent {
 
   addCategoryForm:any = FormGroup
 
-  constructor(private fb:FormBuilder,private categoryservice:CategoryService,private router:Router){
+  constructor(
+    private fb:FormBuilder,
+    private categoryservice:CategoryService,
+    private router:Router,
+    private snackBar: MatSnackBar
+    )
+    {
     this.addCategoryForm=this.fb.group({
       category:['',[Validators.required]],
       description:['',[Validators.required]],
@@ -24,6 +32,11 @@ submitForm(){
   console.log("+++++++++++",body)
   this.categoryservice.addCategory(body).subscribe((res)=>{
     console.log("---------",res)
+    this.snackBar.open('Category Add successfully', 'Close', {
+      duration: 2000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
   this.router.navigate(['/admin/viewcategory'])
 
   })

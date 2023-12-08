@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-view-categories',
@@ -8,7 +9,7 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class ViewCategoriesComponent {
 
-  constructor(private categoryservice:CategoryService){}
+  constructor(private categoryservice:CategoryService,private snackBar: MatSnackBar){}
   data:any=[]
   ngOnInit(){
 this.getCategory()
@@ -25,6 +26,11 @@ this.getCategory()
   deleteCategory(id:number){
    this.categoryservice.deleteCategory(id).subscribe((res)=>{
     console.log("-------",res)
+    this.snackBar.open('Category deleted successfully', 'Close', {
+      duration: 2000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
     this.getCategory()
    })
   }
