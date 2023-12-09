@@ -5,9 +5,7 @@
     <h1>All Categories</h1>
     <button class="btn btn-success" routerLink="/admin/addcategory">Add Categories</button>
   </header>
-
   <main>
-
   <div class="category-item" *ngFor="let value of data">
    <div>
     <mat-icon style="width: 86%;padding-left: 28px;" (click)="deleteCategory(value._id)">delete</mat-icon>
@@ -17,7 +15,6 @@
       <p>{{value.description}}</p>
       <mat-icon>trending_flat</mat-icon><br>
     </div>
-    <!-- Add more category items as needed -->
   </main>
   <router-outlet></router-outlet>
 </mat-card>

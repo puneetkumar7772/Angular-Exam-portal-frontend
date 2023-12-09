@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { QuizzesService } from "src/app/services/quizzes.service";
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: "app-view-quizzes",
@@ -8,7 +10,7 @@ import { QuizzesService } from "src/app/services/quizzes.service";
   styleUrls: ["./view-quizzes.component.css"],
 })
 export class ViewQuizzesComponent {
-  constructor(private quizservice: QuizzesService, private router:Router) {}
+  constructor(private quizservice: QuizzesService, private router:Router,private snackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.getQuizzes();
@@ -26,6 +28,11 @@ export class ViewQuizzesComponent {
     this.quizservice.deleteQuizzes(id).subscribe((res) => {
       console.log("first", res);
       console.log("quiz deleted ");
+      this.snackBar.open('Quiz deleted successfully', 'Close', {
+        duration: 2000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+      });
       this.getQuizzes();
     });
   }

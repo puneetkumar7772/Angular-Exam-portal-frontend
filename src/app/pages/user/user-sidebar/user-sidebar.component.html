@@ -1,0 +1,8 @@
+<mat-card style="margin-top: 15px;border-radius: 10px;  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);height:43vw;overflow-y: scroll;">
+  <mat-action-list>
+    <div mat-subheader><h1>User Dashboard</h1></div>
+    <button mat-list-item routerLink="/user/"><mat-icon mat-list-icon>home</mat-icon>home</button>
+    <button mat-list-item><mat-icon mat-list-icon>quiz</mat-icon>All Quizzes</button>
+    <button mat-list-item *ngFor="let value of data"><mat-icon mat-list-icon>quiz</mat-icon>{{value.category}}</button>
+  </mat-action-list>
+</mat-card>
