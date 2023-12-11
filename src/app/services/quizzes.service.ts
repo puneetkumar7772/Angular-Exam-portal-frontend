@@ -25,4 +25,8 @@ export class QuizzesService {
   getQuizById(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/getQuizById/${id}`);
   }
+  getQuizByCategoryName(category:any):Observable<any>{
+    return this.http.get(`${this.baseUrl}/getQuizze/${category}`)
+
+  }
 }

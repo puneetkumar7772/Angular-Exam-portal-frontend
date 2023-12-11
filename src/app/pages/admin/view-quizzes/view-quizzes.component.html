@@ -17,7 +17,7 @@
       <div style="display: flex;gap: 10px;margin-bottom: 10px;margin-left: 10px;margin-top: 10px;align-items: center;flex-wrap: wrap;">
         <button mat-raised-button color="accent" routerLink="/admin/viewquestion">Questions</button>
         <p style="color: red;padding-top: 10px;">Max-marks:{{value.maxMark}}</p>
-        <p style="color: red;padding-top: 10px;">Display Question:- </p>
+        <p style="color: red;padding-top: 10px;">Display Question:- {{value.numberOfQuestion}}</p>
         <button mat-raised-button color="" style="background-color: lightgreen;">Attampts</button>
         <button mat-raised-button color="" style="background-color: lightskyblue;"  routerLink ="['/admin/updatequiz', value._id]" (click)="navigate(value._id)">Update</button>
         <button mat-raised-button color="warn" (click)="deleteQuiz(value._id)">delete</button>

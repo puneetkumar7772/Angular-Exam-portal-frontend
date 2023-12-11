@@ -17,6 +17,8 @@ import { AddQuestionComponent } from './pages/admin/add-question/add-question.co
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AllquizzesComponent } from './pages/user/allquizzes/allquizzes.component';
+import { InstructionComponent } from './pages/user/instruction/instruction.component';
+import { StartquizComponent } from './pages/user/startquiz/startquiz.component';
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
@@ -26,8 +28,10 @@ const routes: Routes = [
   {path:'sidebar',component:SidebarComponent},
 {path:'user',component:UserDashboardComponent,
 children:[
-  {path:'',component:AllquizzesComponent}
+  {path:'',component:AllquizzesComponent},
+  {path:'instructions/:id',component:InstructionComponent},
 ]},
+{path:'startquiz/:id',component:StartquizComponent},
 
   {path:'admin',component:DashboardComponent,
   children:[

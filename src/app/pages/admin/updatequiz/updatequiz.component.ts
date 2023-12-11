@@ -26,8 +26,6 @@ export class UpdatequizComponent {
       category: ["", [Validators.required]],
       status: ["", [Validators.required]],
     });
-
-
   }
 
   category: any = [];
@@ -36,9 +34,21 @@ export class UpdatequizComponent {
   ngOnInit() {
     this.route.params.subscribe(params => {
       const id = params['id'];
-      this.quizzeservice.getQuizById(id).subscribe((res) => {
+       this.quizzeservice.getQuizById(id).subscribe((res) => {
         console.log("888888",res)
         this.data=res;
+        if (this.data?.data) {
+          this.updateQuizForm.patchValue({
+            quizzeTitle: this.data.data.quizzeTitle,
+            quizzeDescription: this.data.data.quizzeDescription,
+            maxMark: this.data.data.maxMark,
+            numberOfQuestion: this.data.data.numberOfQuestion,
+            category: this.data.data.category,
+            status: this.data.data.status,
+          });
+        }
+        console.log("first",this.data?.data?.quizzeTitle)
+        console.log("second",this.data?.data?.category)
         console.log("44444",this.data)
       });
 
@@ -49,16 +59,5 @@ export class UpdatequizComponent {
       console.log("88888", this.category);
     });
   }
-
-  // submitQuiz() {
-  //   const body = this.addQuizForm.value;
-  //   console.log("5555555", body);
-  //   this.quizzeservice.addQuizzes(body).subscribe((res) => {
-  //     console.log("6666666", res);
-  //     console.log("quizze add successfully");
-  //     this.addQuizForm.reset();
-  //     this.router.navigate(["/admin/viewquizzes"]);
-  //   });
-  // }
 
 }

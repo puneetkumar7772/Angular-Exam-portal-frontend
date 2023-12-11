@@ -38,6 +38,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AllquizzesComponent } from './pages/user/allquizzes/allquizzes.component';
+import { InstructionComponent } from './pages/user/instruction/instruction.component';
+import { StartquizComponent } from './pages/user/startquiz/startquiz.component';
 
 
 
@@ -63,7 +65,9 @@ import { AllquizzesComponent } from './pages/user/allquizzes/allquizzes.componen
     AdminHomeComponent,
     UserDashboardComponent,
     UserSidebarComponent,
-    AllquizzesComponent
+    AllquizzesComponent,
+    InstructionComponent,
+    StartquizComponent
   ],
   imports: [
     BrowserModule,
