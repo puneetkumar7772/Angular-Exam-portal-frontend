@@ -37,6 +37,7 @@ import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.componen
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AllquizzesComponent } from './pages/user/allquizzes/allquizzes.component';
 
 
 
@@ -61,7 +62,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AddQuestionComponent,
     AdminHomeComponent,
     UserDashboardComponent,
-    UserSidebarComponent
+    UserSidebarComponent,
+    AllquizzesComponent
   ],
   imports: [
     BrowserModule,
