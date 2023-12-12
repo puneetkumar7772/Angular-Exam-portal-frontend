@@ -1,35 +1,61 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AuthuserService } from 'src/app/services/authuser.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
+  registrationForm: any = FormGroup;
 
-  registrationForm: FormGroup;
-
-constructor(private fb:FormBuilder,private router:Router){
-   this.registrationForm = this.fb.group ({
-      name: ['', Validators.required],
-      username: ['', Validators.required],
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private userservice: AuthuserService,
+    private snackBar: MatSnackBar
+  ) {
+    this.registrationForm = this.fb.group({
+      fullName: ['', Validators.required],
+      userName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       cochingName: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', Validators.required],
-    })
-}
-data: FormData[] = [];
+      confirmedPassword: ['', Validators.required],
+    });
+  }
 
-registerUser(){
-  this.data=this.registrationForm.value
-  console.log('000000000',this.data)
-  localStorage.setItem('user',JSON.stringify(this.data))
-  console.log("first",localStorage.setItem('user',JSON.stringify(this.data)))
-  this.router.navigate(['/login']);
-
-}
-
+  registerUser() {
+    const body = this.registrationForm.value;
+    console.log('111111', body);
+    this.userservice.userRegister(body).subscribe(
+      (res) => {
+        console.log('22222', res);
+        this.snackBar.open('User Registration successfully', 'Close', {
+          duration: 2000,
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+        });
+        this.router.navigate(['/login']);
+        this.registrationForm.reset();
+      },
+      (error) => {
+        console.log(error);
+        if (error.status === 409) {
+          this.registrationForm
+            .get('email')
+            .setErrors({ duplicateEmail: true });
+        } else {
+          this.snackBar.open('Duplicate Email is not allowed', 'Close', {
+            duration: 2000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+          });
+        }
+      }
+    );
+  }
 }

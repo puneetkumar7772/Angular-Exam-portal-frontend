@@ -29,4 +29,9 @@ export class QuizzesService {
     return this.http.get(`${this.baseUrl}/getQuizze/${category}`)
 
   }
+
+  getQuizByIdAndUpdate(id:number,body:any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/update/${id}`,body)
+
+  }
 }

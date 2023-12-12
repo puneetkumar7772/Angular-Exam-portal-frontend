@@ -19,6 +19,7 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { AllquizzesComponent } from './pages/user/allquizzes/allquizzes.component';
 import { InstructionComponent } from './pages/user/instruction/instruction.component';
 import { StartquizComponent } from './pages/user/startquiz/startquiz.component';
+import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
@@ -40,6 +41,7 @@ children:[
     {path:'profile',component:ProfileComponent},
     {path:"addcategory",component:AddCategoryComponent},
     {path:"viewcategory",component:ViewCategoriesComponent},
+    {path:"updatecategory/:id",component:UpdateCategoryComponent},
     {path:"viewquizzes",component:ViewQuizzesComponent},
     {path:"addquizzes",component:AddQuizzesComponent},
     {path:"updatequiz/:id",component:UpdatequizComponent},

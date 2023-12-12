@@ -6,9 +6,12 @@
     height: 100%;
   "
 >
-  <h1>Add New Categories</h1>
+  <h1>Update Categories</h1>
   <div class="container">
-    <form [formGroup]="addCategoryForm" (ngSubmit)="submitForm()">
+    <form
+      [formGroup]="updateCategoryForm"
+      (ngSubmit)="submitUpdateCategoryData()"
+    >
       <label for="category">Category:</label>
       <input
         type="text"
@@ -27,7 +30,7 @@
         formControlName="description"
         required
       ></textarea>
-      <button type="submit">Add Category</button>
+      <button type="submit">Update</button>
     </form>
   </div>
 </mat-card>

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { CategoryService } from "src/app/services/category.service";
 import { QuizzesService } from "src/app/services/quizzes.service";
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-add-quizzes",
@@ -42,16 +42,32 @@ export class AddQuizzesComponent {
   submitQuiz() {
     const body = this.addQuizForm.value;
     console.log("5555555", body);
-    this.quizzeservice.addQuizzes(body).subscribe((res) => {
-      console.log("6666666", res);
-      console.log("quizze add successfully");
-      this.snackBar.open('Quiz Add successfully', 'Close', {
-        duration: 2000,
-        horizontalPosition: 'center',
-        verticalPosition: 'top',
-      });
-      this.addQuizForm.reset();
-      this.router.navigate(["/admin/viewquizzes"]);
-    });
+    this.quizzeservice.addQuizzes(body).subscribe(
+      (res) => {
+        console.log("6666666", res);
+        console.log("quizze add successfully");
+        this.snackBar.open("Quiz Add successfully", "Close", {
+          duration: 2000,
+          horizontalPosition: "center",
+          verticalPosition: "top",
+        });
+        this.addQuizForm.reset();
+        this.router.navigate(["/admin/viewquizzes"]);
+      },
+      (error) => {
+        console.log(error);
+        if (error.status === 409) {
+          this.addQuizForm
+            .get("quizzeTitle")
+            .setErrors({ duplicatequizzTitle: true });
+        } else {
+          this.snackBar.open("Duplicate Quiz is not allowed", "Close", {
+            duration: 2000,
+            horizontalPosition: "center",
+            verticalPosition: "top",
+          });
+        }
+      }
+    );
   }
 }
