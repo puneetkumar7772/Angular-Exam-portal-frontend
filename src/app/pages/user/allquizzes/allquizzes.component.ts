@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { QuizzesService } from 'src/app/services/quizzes.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { QuizzesService } from 'src/app/services/quizzes.service';
 })
 export class AllquizzesComponent {
 
-  constructor(private quizservice:QuizzesService){}
+  constructor(private quizservice:QuizzesService,private router:Router){}
 
   data:any;
   ngOnInit(){
@@ -22,5 +23,7 @@ export class AllquizzesComponent {
       console.log("8888888",this.data)
     })
   }
-
+ navigate(id:number){
+  this.router.navigate(['/user/instructions',id])
+ }
 }

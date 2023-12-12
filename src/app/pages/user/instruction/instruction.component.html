@@ -1,0 +1,46 @@
+<div class="bootstrap-wrapper"  *ngIf="quizData">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+           Read About all instructions carefully.
+            </mat-card-title>
+            <mat-card-subtitle>
+              One step more to start quiz
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <h1><b>{{quizData?.data?.quizzeTitle}}</b></h1>
+            <p>{{quizData?.data?.quizzeDescription}}</p><br>
+            <mat-divider></mat-divider>
+            <h1>Important instruction</h1>
+            <ul>
+              <li>This quiz only for practice purpose.</li>
+              <li>This of  quiz completed with in <b>{{quizData?.data?.numberOfQuestion*2}} Minutes.</b></li>
+              <li>You have submit quiz with in time if not then quiz autometic submit.</li>
+              <li>You can attempt quiz in many times.</li>
+              <li>There are <b>{{quizData?.data?.numberOfQuestion}} question</b> in this quiz.</li>
+              <li>All question is MCQ types.</li>
+              <li>Each Question Carries <b>{{ (quizData?.data?.maxMark / quizData?.data?.numberOfQuestion).toFixed(2) }} Marks</b></li>
+            </ul><br>
+            <mat-divider></mat-divider>
+            <h1>Attempting Quiz</h1>
+            <ul>
+              <li>Click <b>Start button</b> to start the quiz</li>
+              <li>The time will start the moment in click the start test button.</li>
+              <li>You can not resume the quiz,if intrrupted due to any reason.</li>
+              <li>Scroll down to move the next question</li>
+              <li>Click on submit test button on completed of the quiz.</li>
+              <li>Result will be autometc genrated will be form of PDf.</li>
+            </ul>
+          </mat-card-content>
+          <div class="container text-center" style="padding-bottom: 15px;">
+            <button mat-raised-button color="accent" (click)="startQuiz(quizData?.data?._id)">Start Quiz</button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
