@@ -9,7 +9,7 @@
   <div class="category-item" *ngFor="let value of data">
    <div>
     <mat-icon style="width: 86%;padding-left: 28px;" (click)="deleteCategory(value._id)">delete</mat-icon>
-   <mat-icon>create</mat-icon>
+   <mat-icon (click)="navigate(value._id)">create</mat-icon>
    </div>
       <h2>{{value.category}}</h2>
       <p>{{value.description}}</p>

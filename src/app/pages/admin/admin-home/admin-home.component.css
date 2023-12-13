@@ -1,11 +1,59 @@
-
-#header {
-  background: url(../../../../assets/10.jpg) center center / cover no-repeat ;
-  height: 270px;
-}
 h1{
-  color:#fff;
+  color: blue;
   font-weight: bold;
   font-size: 30px;
   padding-top: 20px;
+}
+.row{
+  padding-bottom: 25px;
+}
+.user{
+  width: 30%;
+  padding-bottom: 20px;
+}
+.counter-box {
+display: block;
+background: #f6f6f6;
+padding: 40px 20px 37px;
+text-align: center
+}
+
+.counter-box p {
+margin: 5px 0 0;
+padding: 0;
+color: #909090;
+font-size: 20px;
+font-weight: 500
+}
+
+.counter-box i {
+font-size: 60px;
+margin: 0 0 15px;
+color: #d2d2d2
+}
+
+.counter {
+display: block;
+font-size: 25px;
+font-weight: 700;
+color: #666;
+line-height: 28px
+}
+
+.counter-box.colored {
+    background:#333;
+    border-radius: 14px;
+}
+
+.counter-box.colored p,
+.counter-box.colored .counter {
+color: #fff
+}
+
+@media screen and (max-width:768px) and (min-width:290px) {
+  .row{
+    display: flex;
+    gap: 5px;
+  }
+
 }

@@ -23,5 +23,14 @@ export class CategoryService {
     return this.http.get(`${this.baseUrl}/getCategories/${id}`)
   }
 
+  getCategoryById(id:number):Observable<any>{
+    return this.http.get(`${this.baseUrl}/getCategory/${id}`)
+  }
+
+
+  getCategoryByIdAndUpdate(id:number,body:any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/updatecategory/${id}`,body)
+  }
+
 
 }

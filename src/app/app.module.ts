@@ -40,6 +40,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AllquizzesComponent } from './pages/user/allquizzes/allquizzes.component';
 import { InstructionComponent } from './pages/user/instruction/instruction.component';
 import { StartquizComponent } from './pages/user/startquiz/startquiz.component';
+import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
 
 
 
@@ -67,7 +68,8 @@ import { StartquizComponent } from './pages/user/startquiz/startquiz.component';
     UserSidebarComponent,
     AllquizzesComponent,
     InstructionComponent,
-    StartquizComponent
+    StartquizComponent,
+    UpdateCategoryComponent
   ],
   imports: [
     BrowserModule,

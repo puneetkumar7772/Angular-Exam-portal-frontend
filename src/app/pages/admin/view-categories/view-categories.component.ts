@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-categories',
@@ -9,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ViewCategoriesComponent {
 
-  constructor(private categoryservice:CategoryService,private snackBar: MatSnackBar){}
+  constructor(private categoryservice:CategoryService,private snackBar: MatSnackBar,private router:Router){}
   data:any=[]
   ngOnInit(){
 this.getCategory()
@@ -33,5 +34,10 @@ this.getCategory()
     });
     this.getCategory()
    })
+  }
+
+  navigate(id:number){
+    this.router.navigate(['/admin/updatecategory',id])
+
   }
 }
