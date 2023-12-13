@@ -15,7 +15,7 @@
     </mat-card-content>
     <!-- <mat-card-action> -->
       <div style="display: flex;gap: 10px;margin-bottom: 10px;margin-left: 10px;margin-top: 10px;align-items: center;flex-wrap: wrap;">
-        <button mat-raised-button color="accent" routerLink="/admin/viewquestion">Questions</button>
+        <button mat-raised-button color="accent" (click)="navigateView(value._id)">Questions</button>
         <p style="color: red;padding-top: 10px;">Max-marks:{{value.maxMark}}</p>
         <p style="color: red;padding-top: 10px;">Display Question:- {{value.numberOfQuestion}}</p>
         <button mat-raised-button color="" style="background-color: lightgreen;">Attampts</button>

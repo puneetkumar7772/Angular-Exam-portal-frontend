@@ -45,7 +45,7 @@ children:[
     {path:"viewquizzes",component:ViewQuizzesComponent},
     {path:"addquizzes",component:AddQuizzesComponent},
     {path:"updatequiz/:id",component:UpdatequizComponent},
-    {path:"viewquestion",component:ViewQuestionComponent},
+    {path:"viewquestion/:id",component:ViewQuestionComponent},
     {path:"addquestion",component:AddQuestionComponent},
   ],
   },
