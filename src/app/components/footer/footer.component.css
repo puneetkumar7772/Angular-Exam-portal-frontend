@@ -2,8 +2,6 @@
   background-color:#2e2b2b;
   width: 100%;
   height: auto;
-  border-radius:70px 66px 70px;
-  margin-top: 1%;
 }
 .sub_footer{
   display: grid;
@@ -69,9 +67,5 @@ button:hover{
 ul{
   padding-inline-start: 0px;
 }
-.footer{
-  border-radius:0px 0px 0px;
-  margin-top: 15px;
 
-}
 }

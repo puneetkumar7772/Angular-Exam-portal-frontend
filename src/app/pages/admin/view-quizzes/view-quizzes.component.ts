@@ -39,9 +39,8 @@ export class ViewQuizzesComponent {
 
   navigate(id:number){
     this.router.navigate(['/admin/updatequiz', id]);
-
-    // this.quizservice.getQuizById(id).subscribe((res)=>{
-    //   console.log("first",res)
-    // })
+  }
+  navigateView(id:number){
+    this.router.navigate(['/admin/viewquestion',id])
   }
 }
