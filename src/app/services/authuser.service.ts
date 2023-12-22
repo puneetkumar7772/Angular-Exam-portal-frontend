@@ -4,14 +4,21 @@ import { AppConfig } from '../../../config';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthuserService {
-
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
   private baseUrl: string = AppConfig.baseUrl;
 
-  userRegister(body:any):Observable<any>{
-    return this.http.post(`${this.baseUrl}/registerUser`,body)
+  userRegister(body: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/registerUser`, body);
+  }
+
+  getUser(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/getUsers`);
+  }
+
+  deleteUser(id:number):Observable<any>{
+    return this.http.delete(`${this.baseUrl}/deleteUser/${id}`)
   }
 }

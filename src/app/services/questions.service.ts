@@ -16,8 +16,8 @@ export class QuestionsService {
     return this.http.post(`${this.baseUrl}/addQuestion`, body);
   }
 
-  getQuestions():Observable<any>{
-    return this.http.get(`${this.baseUrl}/getQuestion`)
+  getQuestionsbyQuizId(id:number):Observable<any>{
+    return this.http.get(`${this.baseUrl}/getQuestion/${id}`)
   }
 
   deleteQuestion(id:number):Observable<any>{

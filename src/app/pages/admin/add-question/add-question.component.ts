@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { ActivatedRoute } from "@angular/router";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { QuestionsService } from "src/app/services/questions.service";
 
@@ -14,10 +15,13 @@ export class AddQuestionComponent {
   addQuestionForm: any = FormGroup;
   dynamicOptions: string[] = [];
 
+  quizId:any;
+
   constructor(
     private fb: FormBuilder,
     private questionservice: QuestionsService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private route:ActivatedRoute
   ) {
     this.addQuestionForm = this.fb.group({
       question: ["", [Validators.required]],
@@ -26,12 +30,19 @@ export class AddQuestionComponent {
       optionThree: ["", Validators.required],
       optionFour: ["", Validators.required],
       answer: ["", [Validators.required]],
+      quizID:[this.quizId]
     });
     this.addQuestionForm.valueChanges.subscribe((formValues: any) => {
       this.updateDynamicOptions(formValues);
     });
   }
 
+  ngOnInit(){
+    this.route.paramMap.subscribe((params) => {
+      this.quizId = params.get("id");
+      console.log("shfdgxcjv,", this.quizId);
+    });
+  }
   updateDynamicOptions(formValues: any) {
     this.dynamicOptions = [
       this.addQuestionForm.value.optionOne,
@@ -51,6 +62,7 @@ export class AddQuestionComponent {
         optionFour: this.addQuestionForm.value.optionFour,
       },
       answer: this.addQuestionForm.value.answer,
+      quizID:this.quizId
     };
     console.log("11111111111", body);
     this.questionservice.addQuestions(body).subscribe((res) => {

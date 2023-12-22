@@ -11,7 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
@@ -40,6 +40,8 @@ import { AllquizzesComponent } from './pages/user/allquizzes/allquizzes.componen
 import { InstructionComponent } from './pages/user/instruction/instruction.component';
 import { StartquizComponent } from './pages/user/startquiz/startquiz.component';
 import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
+import {MatTableModule} from '@angular/material/table';
+import { UserlistComponent } from './pages/admin/userlist/userlist.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,7 @@ import { UpdateCategoryComponent } from './pages/admin/update-category/update-ca
     InstructionComponent,
     StartquizComponent,
     UpdateCategoryComponent,
+    UserlistComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +88,8 @@ import { UpdateCategoryComponent } from './pages/admin/update-category/update-ca
     MatRadioModule,
     CKEditorModule,
     MatSnackBarModule,
+    MatTableModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

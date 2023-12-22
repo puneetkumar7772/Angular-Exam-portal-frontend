@@ -20,41 +20,46 @@ import { AllquizzesComponent } from './pages/user/allquizzes/allquizzes.componen
 import { InstructionComponent } from './pages/user/instruction/instruction.component';
 import { StartquizComponent } from './pages/user/startquiz/startquiz.component';
 import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
+import { UserlistComponent } from './pages/admin/userlist/userlist.component';
 
 const routes: Routes = [
-  {path:'register',component:RegisterComponent},
-  {path:'',component:HomeComponent},
-  {path:'about',component:AboutComponent},
-  {path:'login',component:LoginComponent},
-  {path:'sidebar',component:SidebarComponent},
-{path:'user',component:UserDashboardComponent,
-children:[
-  {path:'',component:AllquizzesComponent},
-  {path:'instructions/:id',component:InstructionComponent},
-]},
-{path:'startquiz/:id',component:StartquizComponent},
-
-  {path:'admin',component:DashboardComponent,
-  children:[
-    {path:'',component:AdminHomeComponent},
-
-    {path:'profile',component:ProfileComponent},
-    {path:"addcategory",component:AddCategoryComponent},
-    {path:"viewcategory",component:ViewCategoriesComponent},
-    {path:"updatecategory/:id",component:UpdateCategoryComponent},
-    {path:"viewquizzes",component:ViewQuizzesComponent},
-    {path:"addquizzes",component:AddQuizzesComponent},
-    {path:"updatequiz/:id",component:UpdatequizComponent},
-    {path:"viewquestion/:id",component:ViewQuestionComponent},
-    {path:"addquestion",component:AddQuestionComponent},
-  ],
+  { path: 'register', component: RegisterComponent },
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'sidebar', component: SidebarComponent },
+  {
+    path: 'user',
+    component: UserDashboardComponent,
+    children: [
+      { path: '', component: AllquizzesComponent },
+      { path: 'instructions/:id', component: InstructionComponent },
+    ],
   },
+  { path: 'startquiz/:id', component: StartquizComponent },
 
+  {
+    path: 'admin',
+    component: DashboardComponent,
+    children: [
+      { path: '', component: AdminHomeComponent },
 
+      { path: 'profile', component: ProfileComponent },
+      { path: 'addcategory', component: AddCategoryComponent },
+      { path: 'viewcategory', component: ViewCategoriesComponent },
+      { path: 'updatecategory/:id', component: UpdateCategoryComponent },
+      { path: 'viewquizzes', component: ViewQuizzesComponent },
+      { path: 'addquizzes', component: AddQuizzesComponent },
+      { path: 'updatequiz/:id', component: UpdatequizComponent },
+      { path: 'viewquestion/:id', component: ViewQuestionComponent },
+      { path: 'addquestion/:id', component: AddQuestionComponent },
+      { path: 'userlist', component: UserlistComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

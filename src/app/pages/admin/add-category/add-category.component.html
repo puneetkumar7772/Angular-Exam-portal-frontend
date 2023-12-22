@@ -4,30 +4,39 @@
     border-radius: 10px;
     box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
     height: 100%;
-  "
->
+  ">
   <h1>Add New Categories</h1>
   <div class="container">
     <form [formGroup]="addCategoryForm" (ngSubmit)="submitForm()">
       <label for="category">Category:</label>
+     <div>
       <input
-        type="text"
-        id="category"
-        name="category"
-        placeholder="Category Name"
-        formControlName="category"
-        required
-      />
+      type="text"
+      id="category"
+      name="category"
+      placeholder="Category Name"
+      formControlName="category"
+      required
+    />
+    <div *ngIf="addCategoryForm.get('category').touched && addCategoryForm.get('category').invalid" class="error-message">
+      Category is required.
+    </div>
+     </div>
       <label for="description">Description:</label>
+     <div>
       <textarea
-        id="description"
-        name="description"
-        rows="4"
-        placeholder="Description"
-        formControlName="description"
-        required
-      ></textarea>
-      <button type="submit">Add Category</button>
+      id="description"
+      name="description"
+      rows="4"
+      placeholder="Description"
+      formControlName="description"
+      required
+    ></textarea>
+    <div *ngIf="addCategoryForm.get('description').touched && addCategoryForm.get('description').invalid" class="error-message">
+      Description is required.
+    </div>
+     </div>
+      <button type="submit" [disabled]="addCategoryForm.invalid">Add Category</button>
     </form>
   </div>
 </mat-card>

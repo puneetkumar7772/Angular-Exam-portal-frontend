@@ -1,4 +1,4 @@
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+
 <div class="container">
   <div class="heading">
     <h1 class="heading__text">Quiz Name</h1>
@@ -13,118 +13,59 @@
     </div>
 
     <form class="quiz-form">
-      <div class="quiz-form__quiz">
-        <p class="quiz-form__question">
-          1. What happens to plastic waste?
+      <div class="quiz-form__quiz" *ngFor="let value of data; let i = index">
+        <p
+          class="quiz-form__question"
+          [innerHTML]="stripHtmlTags(value.question)"
+        >
+          Q.{{ value?.question }}
         </p>
-        <label class="quiz-form__ans" for="q11">
-          <input type="radio" name="q1" id="q11" value="A" checked />
+        <label class="quiz-form__ans" [for]="value?.options[0]?.optionOne">
+          <input
+            type="radio"
+            [name]="value?.options[0]._id"
+            [id]="value?.options[0]?.optionOne"
+            [(ngModel)]="value.givenAnswer"
+            [value]="value?.options[0]?.optionOne"
+          />
           <span class="design"></span>
-          <span class="text">It is a biodegradable material so it eventually
-            disintegrates</span>
+          <span class="text">{{ value?.options[0]?.optionOne }}</span>
         </label>
-        <label class="quiz-form__ans" for="q12">
-          <input type="radio" name="q1" id="q12" value="B" />
+        <label class="quiz-form__ans" [for]="value?.options[0]?.optionTwo ">
+            <input
+              type="radio"
+              [name]="value?.options[0]._id"
+              [id]="value?.options[0]?.optionTwo "
+              [(ngModel)]="value.givenAnswer"
+              [value]="value?.options[0]?.optionTwo "
+            />
           <span class="design"></span>
-          <span class="text">It never fully goes away, it just breaks into little
-            pieces</span>
+          <span class="text">{{ value?.options[0]?.optionTwo }}</span>
         </label>
-        <label class="quiz-form__ans" for="q13">
-          <input type="radio" name="q1" id="q13" value="C" />
+        <label class="quiz-form__ans" [for]="value?.options[0]?.optionThree">
+          <input
+            type="radio"
+            [name]="value?.options[0]._id"
+            [id]="value?.options[0]?.optionThree"
+            [(ngModel)]="value.givenAnswer"
+            [value]="value?.options[0]?.optionThree"
+          />
           <span class="design"></span>
-          <span class="text">There is no such thing as plastic waste, all plastic is
-            recycled</span>
+          <span class="text">{{ value?.options[0]?.optionThree }}</span>
         </label>
-        <label class="quiz-form__ans" for="q14">
-          <input type="radio" name="q1" id="q14" value="D" />
+        <label class="quiz-form__ans" [for]="value?.options[0]?.optionFour">
+          <input
+            type="radio"
+            [name]="value?.options[0]._id"
+            [id]="value?.options[0]?.optionFour"
+            [(ngModel)]="value.givenAnswer"
+            [value]="value?.options[0]?.optionFour"
+          />
           <span class="design"></span>
-          <span class="text">It is dumped in the ocean for fish to eat</span>
+          <span class="text">{{ value?.options[0]?.optionFour }}</span>
         </label>
       </div>
-
-      <div class="quiz-form__quiz">
-        <p class="quiz-form__question">
-          2. Why is plastic dangerous for marine life?
-        </p>
-        <label class="quiz-form__ans" for="q21">
-          <input type="radio" name="q2" id="q21" value="A" checked />
-          <span class="design"></span>
-          <span class="text">It's not dangerous because they use plastic waste for
-            habitats</span>
-        </label>
-        <label class="quiz-form__ans" for="q22">
-          <input type="radio" name="q2" id="q22" value="B" />
-          <span class="design"></span>
-          <span class="text">They can get tangled in it which hinders their ability to
-            swim</span>
-        </label>
-        <label class="quiz-form__ans" for="q23">
-          <input type="radio" name="q2" id="q23" value="C" />
-          <span class="design"></span>
-          <span class="text">They mistake it for food and cannot digest it</span>
-        </label>
-        <label class="quiz-form__ans" for="q24">
-          <input type="radio" name="q2" id="q24" value="D" />
-          <span class="design"></span>
-          <span class="text">Both a and b</span>
-        </label>
-      </div>
-
-      <div class="quiz-form__quiz">
-        <p class="quiz-form__question">
-          9. More than half of the breathable oxygen in the world comes
-          from?
-        </p>
-        <label class="quiz-form__ans" for="q91">
-          <input type="radio" name="q9" id="q91" value="A" checked />
-          <span class="design"></span>
-          <span class="text">The oceans</span>
-        </label>
-        <label class="quiz-form__ans" for="q92">
-          <input type="radio" name="q9" id="q92" value="B" />
-          <span class="design"></span>
-          <span class="text">The forests</span>
-        </label>
-        <label class="quiz-form__ans" for="q93">
-          <input type="radio" name="q9" id="q93" value="C" />
-          <span class="design"></span>
-          <span class="text">Lakes</span>
-        </label>
-        <label class="quiz-form__ans" for="q94">
-          <input type="radio" name="q9" id="q94" value="D" />
-          <span class="design"></span>
-          <span class="text">Clouds</span>
-        </label>
-      </div>
-
-      <div class="quiz-form__quiz">
-        <p class="quiz-form__question">
-          10. About how many plastic grocery bags do Americans throw away
-          each year?
-        </p>
-        <label class="quiz-form__ans" for="q101">
-          <input type="radio" name="q10" id="q101" value="A" checked />
-          <span class="design"></span>
-          <span class="text">10 million</span>
-        </label>
-        <label class="quiz-form__ans" for="q102">
-          <input type="radio" name="q10" id="q102" value="B" />
-          <span class="design"></span>
-          <span class="text">500 million</span>
-        </label>
-        <label class="quiz-form__ans" for="q103">
-          <input type="radio" name="q10" id="q103" value="C" />
-          <span class="design"></span>
-          <span class="text">1 billion</span>
-        </label>
-        <label class="quiz-form__ans" for="q104">
-          <input type="radio" name="q10" id="q104" value="D" />
-          <span class="design"></span>
-          <span class="text">100 billion</span>
-        </label>
-      </div>
-
-      <input class="submit" type="submit" value="Submit" />
+      <input class="submit" type="submit" value="Submit" (click)="submitQuiz()" />
     </form>
   </div>
 </div>

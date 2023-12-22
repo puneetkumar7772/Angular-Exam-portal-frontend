@@ -22,7 +22,7 @@ export class RegisterComponent {
       fullName: ['', Validators.required],
       userName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      cochingName: ['', [Validators.required, Validators.email]],
+      cochingName: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmedPassword: ['', Validators.required],
     });
@@ -31,31 +31,42 @@ export class RegisterComponent {
   registerUser() {
     const body = this.registrationForm.value;
     console.log('111111', body);
-    this.userservice.userRegister(body).subscribe(
-      (res) => {
-        console.log('22222', res);
-        this.snackBar.open('User Registration successfully', 'Close', {
-          duration: 2000,
-          horizontalPosition: 'center',
-          verticalPosition: 'top',
-        });
-        this.router.navigate(['/login']);
-        this.registrationForm.reset();
-      },
-      (error) => {
-        console.log(error);
-        if (error.status === 409) {
-          this.registrationForm
-            .get('email')
-            .setErrors({ duplicateEmail: true });
-        } else {
-          this.snackBar.open('Duplicate Email is not allowed', 'Close', {
+    if (
+      this.registrationForm.value.password ===
+      this.registrationForm.value.confirmedPassword
+    ) {
+      this.userservice.userRegister(body).subscribe(
+        (res) => {
+          console.log('22222', res);
+          this.snackBar.open('User Registration successfully', 'Close', {
             duration: 2000,
             horizontalPosition: 'center',
             verticalPosition: 'top',
           });
+          this.router.navigate(['/login']);
+          this.registrationForm.reset();
+        },
+        (error) => {
+          console.log(error)
+          if (error.status === 409) {
+            this.registrationForm
+              .get('email')
+              .setErrors({ duplicateEmail: true });
+          } else {
+            this.snackBar.open('Duplicate Email is not allowed', 'Close', {
+              duration: 2000,
+              horizontalPosition: 'center',
+              verticalPosition: 'top',
+            });
+          }
         }
-      }
-    );
+      );
+    } else {
+      this.snackBar.open('Password Do not matched', 'Close', {
+        duration: 2000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+      });
+    }
   }
 }

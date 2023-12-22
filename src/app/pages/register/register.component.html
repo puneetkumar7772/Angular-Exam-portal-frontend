@@ -16,23 +16,41 @@
           <form class="login-form" [formGroup]="registrationForm" (ngSubmit)="registerUser()">
             <div class="form-group">
               <input class="form-control" type="text" id="text" name="Name" placeholder="Full name" formControlName="fullName" required>
+              <div *ngIf="registrationForm.get('fullName').touched && registrationForm.get('fullName').invalid" class="error-message">
+                Name is required.
+              </div>
             </div>
             <div class="form-group">
               <input class="form-control" type="text" id="Username" name="Username" placeholder="Username" formControlName="userName" required>
+              <div *ngIf="registrationForm.get('userName').touched && registrationForm.get('userName').invalid" class="error-message">
+                UserName is required.
+              </div>
             </div>
             <div class="form-group">
               <input class="form-control" type="email" id="email" name="email" placeholder="email" formControlName="email"  required>
+              <div *ngIf="registrationForm.get('email').touched && registrationForm.get('email').invalid" class="error-message">
+                Email is required.
+              </div>
             </div>
              <div class="form-group">
-              <input class="form-control" type="text" id="Coching Name" name="Coching Name" placeholder="Coching Name" formControlName="cochingName"  required>
+              <input class="form-control" type="text" id="cochingName" name="cochingName" placeholder="Coching Name" formControlName="cochingName"  required>
+              <div *ngIf="registrationForm.get('cochingName').touched && registrationForm.get('cochingName').invalid" class="error-message">
+                Coching Name is required.
+              </div>
             </div>
             <div class="form-group">
               <input class="form-control" type="password" id="password" name="password" placeholder="Password" formControlName="password"  required>
+              <div *ngIf="registrationForm.get('password').touched && registrationForm.get('password').invalid" class="error-message">
+                Password is required and must be at least 8 characters.
+              </div>
             </div>
             <div class="form-group">
               <input class="form-control" type="password" id="confirmpassword" name="password" placeholder="Confirmed Password" formControlName="confirmedPassword" required>
+              <div *ngIf="registrationForm.get('confirmedPassword').touched && registrationForm.get('confirmedPassword').invalid" class="error-message">
+                Confirmed Password is required.
+              </div>
             </div>
-            <button type="submit">Register</button>
+            <button type="submit" [disabled]="registrationForm.invalid">Register</button>
             <div class="signup-link">
               <p>If you are alredy registered? <a routerLink="/login">Login</a></p>
              </div>
