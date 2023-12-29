@@ -13,7 +13,6 @@
     <mat-card-content>
       <p>{{value.quizzeDescription}}</p>
     </mat-card-content>
-    <!-- <mat-card-action> -->
       <div style="display: flex;gap: 10px;margin-bottom: 10px;margin-left: 10px;margin-top: 10px;align-items: center;flex-wrap: wrap;">
         <button mat-raised-button color="accent" (click)="navigateView(value._id)">Questions</button>
         <p style="color: red;padding-top: 10px;">Max-marks:{{value.maxMark}}</p>
@@ -22,7 +21,46 @@
         <button mat-raised-button color="" style="background-color: lightskyblue;"  routerLink ="['/admin/updatequiz', value._id]" (click)="navigate(value._id)">Update</button>
         <button mat-raised-button color="warn" (click)="deleteQuiz(value._id)">delete</button>
       </div>
-
-    <!-- </mat-card-action> -->
   </mat-card>
 </mat-card>
+
+
+<!-- <div class="container sub_container">
+  <div class="main">
+    <div class="header">
+      <h1>FINANCIAL REPORTS</h1>
+      <button class="btn btn-primary">Co.logo</button>
+    </div>
+    <div class="content">
+      <div class="sub_content1">
+        <div class="btn1" routerLink="/admin/addcategory">TRIAL BALANCE</div>
+        <div class="btn1">BALANCE SHEET</div>
+        <div class="btn1">P&L A/C</div>
+        <div class="btn1">CASH FLOW</div>
+        <div class="btn1">NOTES</div>
+      </div>
+      <div class="card card2">
+        <div>
+          <button class="btn btn-outline-primary"style="width: 25%">
+            Log
+          </button>
+        </div>
+      </div>
+      <div class="sub_content3">
+        <div class="role_section">
+          <h3>USER ID</h3>
+          <h3 class="Role">ROLE</h3>
+          <div class="btn1" style="margin: 10px">
+            Report typed period
+          </div>
+        </div>
+        <div style="margin-top: 10px">
+          <div class="btn1">System settings</div>
+        </div>
+        <div style="margin-top: 10px">
+          <div class="btn1 btn2">LOG OUT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

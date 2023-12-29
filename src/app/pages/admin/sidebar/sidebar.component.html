@@ -1,12 +1,44 @@
 <mat-card style="margin-top: 15px;border-radius: 10px;  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);height:95%;">
   <mat-action-list>
-    <div mat-subheader>Menu</div>
+    <!-- <div mat-subheader style="font-size:20px;font-weight: 500;color:#182237;line-height: 2px;">Admin Dashboard</div>
     <button mat-list-item routerLink="/admin/adminhome"><mat-icon mat-list-icon>home</mat-icon>home</button>
     <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon>account_circle</mat-icon>Profile</button>
     <button mat-list-item  routerLink="/admin/viewcategory"><mat-icon mat-list-icon>list</mat-icon>Categories</button>
     <button mat-list-item  routerLink="/admin/addcategory"><mat-icon mat-list-icon>add_circle_outline</mat-icon>Add Categories</button>
     <button mat-list-item  routerLink="/admin/viewquizzes"><mat-icon mat-list-icon>quiz</mat-icon>Quizzes</button>
     <button mat-list-item  routerLink="/admin/addquizzes"><mat-icon mat-list-icon>add</mat-icon>add Quizzes</button>
-    <button mat-list-item  routerLink="/"><mat-icon mat-list-icon>logout</mat-icon>Logout</button>
+    <button mat-list-item  routerLink="/"><mat-icon mat-list-icon>logout</mat-icon>Logout</button> -->
+    <div mat-subheader style="font-size:20px;font-weight: 500;color:#182237;line-height: 2px;">Admin Dashboard</div>
+   <ul>
+    <li class="nav-item">
+      <a class="nav-link" href="#"  routerLink="/admin">
+        <mat-icon mat-list-icon>home</mat-icon>home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"  routerLink="/admin/profile">
+        <mat-icon mat-list-icon>account_circle</mat-icon>Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"  routerLink="/admin/viewcategory">
+        <mat-icon mat-list-icon>list</mat-icon>Categories</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"  routerLink="/admin/addcategory">
+        <mat-icon mat-list-icon>add_circle_outline</mat-icon>Add Categories</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" routerLink="/admin/viewquizzes">
+        <mat-icon mat-list-icon>quiz</mat-icon>Quizzes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" routerLink="/admin/addquizzes">
+        <mat-icon mat-list-icon>add</mat-icon>add Quizzes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"  routerLink="/">
+        <mat-icon mat-list-icon>logout</mat-icon>Logout</a>
+    </li>
+   </ul>
+   
   </mat-action-list>
 </mat-card>

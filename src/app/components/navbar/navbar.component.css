@@ -7,9 +7,9 @@
   font-size:25px;
   font-weight:500;
 }
-.nav-link:hover{
-  color: #080808;
-}
+/* .nav-link:hover{
+  color:red;
+} */
 .navbar{
-  background-color:darkorchid;
+  background-color:#2E374A;
 }

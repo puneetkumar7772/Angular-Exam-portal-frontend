@@ -16,13 +16,13 @@ export class AllquizzesComponent {
     this.allQuizes()
   }
 
-  allQuizes(){
-    this.quizservice.viewQuizzes().subscribe((res)=>{
-      console.log("111111111111",res);
-      this.data=res;
-      console.log("8888888",this.data)
-    })
-  }
+    allQuizes(){
+      this.quizservice.viewQuizzes().subscribe((res)=>{
+        console.log("111111111111",res);
+        this.data=res;
+        console.log("8888888",this.data)
+      })
+    }
  navigate(id:number){
   this.router.navigate(['/user/instructions',id])
  }

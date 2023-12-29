@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { ActivatedRoute, Router } from "@angular/router";
 import { QuestionsService } from "src/app/services/questions.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: "app-view-question",
@@ -43,15 +44,32 @@ export class ViewQuestionComponent {
   }
 
   deleteQuestion(id: number) {
-    this.questionservice.deleteQuestion(id).subscribe((res) => {
-      console.log("4635263", res);
-      this.snackBar.open("Question Deleted successfully", "Close", {
-        duration: 2000,
-        horizontalPosition: "center",
-        verticalPosition: "top",
-      });
-      this.getQuestions();
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't delete this Question!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Question has been deleted successfully.",
+          icon: "success",
+        });
+        this.questionservice.deleteQuestion(id).subscribe((res) => {
+          console.log("4635263", res);
+          this.getQuestions();
+        });
+        
+      } else {
+        console.log("Question deletion is failed");
+      }
     });
+    
   }
 
   navigateUrl(quizID: string) {

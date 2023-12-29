@@ -1,0 +1,18 @@
+a {
+  display: flex;
+  align-items: center;
+  width: 185px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #182237;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0rem;
+  gap: 10px;
+}

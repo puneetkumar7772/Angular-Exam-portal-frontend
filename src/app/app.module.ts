@@ -43,6 +43,7 @@ import { UpdateCategoryComponent } from './pages/admin/update-category/update-ca
 import {MatTableModule} from '@angular/material/table';
 import { UserlistComponent } from './pages/admin/userlist/userlist.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

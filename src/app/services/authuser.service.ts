@@ -14,6 +14,9 @@ export class AuthuserService {
     return this.http.post(`${this.baseUrl}/registerUser`, body);
   }
 
+  loginUser(body:any):Observable<any>{
+    return this.http.post(`${this.baseUrl}/loginUser`,body)
+  }
   getUser(): Observable<any> {
     return this.http.get(`${this.baseUrl}/getUsers`);
   }
