@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
 import { AuthuserService } from 'src/app/services/authuser.service';
 import Swal from 'sweetalert2';
 
@@ -27,14 +28,29 @@ export class LoginComponent {
     console.log('second', body);
     this.authservice.loginUser(body).subscribe((res) => {
       console.log('first', res);
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Login successfully',
-        showConfirmButton: false,
-        timer: 2000,
-      });
-      this.router.navigate(['/admin']);
+      const token = res.token;
+      localStorage.setItem('authToken', token);
+      const decodedToken: any = jwtDecode(token);
+      const role = decodedToken.role;
+      if (role === 'User') {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Admin Login successfully',
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        this.router.navigate(['/admin']);
+      } else {
+        this.router.navigate(['/user']);
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'User Login successfully',
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      }
     });
   }
 }

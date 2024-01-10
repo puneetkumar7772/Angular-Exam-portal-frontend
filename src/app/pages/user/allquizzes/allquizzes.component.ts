@@ -16,7 +16,7 @@ export class AllquizzesComponent {
     this.allQuizes()
   }
 
-    allQuizes(){
+  allQuizes(){
       this.quizservice.viewQuizzes().subscribe((res)=>{
         console.log("111111111111",res);
         this.data=res;

@@ -8,6 +8,7 @@ a {
   font-size: 18px;
   font-weight: 500;
   color: #182237;
+  cursor: pointer;
 }
 ul {
   list-style: none;
