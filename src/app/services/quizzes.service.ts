@@ -17,6 +17,10 @@ export class QuizzesService {
   viewQuizzes(): Observable<any> {
     return this.http.get(`${this.baseUrl}/getQuizze`);
   }
+  
+  viewQuizzesByStatus(value:string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/quizzes?${value}`);
+  }
 
   deleteQuizzes(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/deleteQuiz/${id}`);

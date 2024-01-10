@@ -12,12 +12,14 @@ export class AllquizzesComponent {
   constructor(private quizservice:QuizzesService,private router:Router){}
 
   data:any;
+  value:string='isActive=true'
+
   ngOnInit(){
     this.allQuizes()
   }
 
   allQuizes(){
-      this.quizservice.viewQuizzes().subscribe((res)=>{
+      this.quizservice.viewQuizzesByStatus(this.value).subscribe((res)=>{
         console.log("111111111111",res);
         this.data=res;
         console.log("8888888",this.data)

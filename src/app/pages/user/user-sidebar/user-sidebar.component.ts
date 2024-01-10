@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -8,10 +9,14 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class UserSidebarComponent {
 
-  constructor(private categoryservice:CategoryService){}
-
+  constructor(private categoryservice:CategoryService,private route:ActivatedRoute){}
+  categoryName:any
   ngOnInit(){
     this.getCategory()
+    this.route.paramMap.subscribe((params) => {
+      this.categoryName = params.get('category');
+      console.log('shfdgxcjv,', this.categoryName);
+    });
   }
 
 
@@ -22,6 +27,10 @@ data:any=[]
       this.data=res;
       console.log("777777",this.data)
     })
+  }
+
+  categoryNameData(category:string ){
+console.log("2222222222",category)
   }
 
 }

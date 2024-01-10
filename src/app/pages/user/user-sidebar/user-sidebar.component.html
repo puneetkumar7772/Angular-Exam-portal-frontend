@@ -2,7 +2,7 @@
   <mat-action-list>
     <div mat-subheader><h1>User Dashboard</h1></div>
     <button mat-list-item routerLink="/user/"><mat-icon mat-list-icon>home</mat-icon>home</button>
-    <button mat-list-item><mat-icon mat-list-icon>quiz</mat-icon>All Quizzes</button>
-    <button mat-list-item *ngFor="let value of data"><mat-icon mat-list-icon>quiz</mat-icon>{{value.category}}</button>
+    <button mat-list-item ><mat-icon mat-list-icon>quiz</mat-icon>All Quizzes</button>
+    <button mat-list-item *ngFor="let value of data" (click)="categoryNameData(value.category)"><mat-icon mat-list-icon>quiz</mat-icon>{{value.category}}</button>
   </mat-action-list>
 </mat-card>
