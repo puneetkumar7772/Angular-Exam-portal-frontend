@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-categories',
@@ -25,15 +26,30 @@ this.getCategory()
   }
 
   deleteCategory(id:number){
-   this.categoryservice.deleteCategory(id).subscribe((res)=>{
-    console.log("-------",res)
-    this.snackBar.open('Category deleted successfully', 'Close', {
-      duration: 2000,
-      horizontalPosition: 'center',
-      verticalPosition: 'top',
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't delete this Quiz!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Quiz has been deleted successfully.",
+          icon: "success",
+        });
+        this.categoryservice.deleteCategory(id).subscribe((res)=>{
+          console.log("-------",res)
+          this.getCategory()
+         })
+      } else {
+        console.log("quiz deletion is failed");
+      }
     });
-    this.getCategory()
-   })
   }
 
   navigate(id:number){

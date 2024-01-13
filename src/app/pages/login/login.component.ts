@@ -29,10 +29,10 @@ export class LoginComponent {
     this.authservice.loginUser(body).subscribe((res) => {
       console.log('first', res);
       const token = res.token;
+      const role = res.user.role;
+      console.log(role,"77777777")
       localStorage.setItem('authToken', token);
-      const decodedToken: any = jwtDecode(token);
-      const role = decodedToken.role;
-      if (role === 'User') {
+      if (role === 'admin') {
         Swal.fire({
           position: 'center',
           icon: 'success',
