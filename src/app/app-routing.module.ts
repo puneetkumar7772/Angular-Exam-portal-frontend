@@ -21,6 +21,7 @@ import { InstructionComponent } from './pages/user/instruction/instruction.compo
 import { StartquizComponent } from './pages/user/startquiz/startquiz.component';
 import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
 import { UserlistComponent } from './pages/admin/userlist/userlist.component';
+import { AuthGuard } from './authgaurd.guard';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
@@ -42,18 +43,18 @@ const routes: Routes = [
     path: 'admin',
     component: DashboardComponent,
     children: [
-      { path: '', component: AdminHomeComponent },
+      { path: '', component: AdminHomeComponent , canActivate: [AuthGuard]},
 
-      { path: 'profile', component: ProfileComponent },
-      { path: 'addcategory', component: AddCategoryComponent },
-      { path: 'viewcategory', component: ViewCategoriesComponent },
-      { path: 'updatecategory/:id', component: UpdateCategoryComponent },
-      { path: 'viewquizzes', component: ViewQuizzesComponent },
-      { path: 'addquizzes', component: AddQuizzesComponent },
-      { path: 'updatequiz/:id', component: UpdatequizComponent },
-      { path: 'viewquestion/:id', component: ViewQuestionComponent },
-      { path: 'addquestion/:id', component: AddQuestionComponent },
-      { path: 'userlist', component: UserlistComponent },
+      { path: 'profile', component: ProfileComponent,canActivate: [AuthGuard] },
+      { path: 'addcategory', component: AddCategoryComponent,canActivate: [AuthGuard] },
+      { path: 'viewcategory', component: ViewCategoriesComponent,canActivate: [AuthGuard] },
+      { path: 'updatecategory/:id', component: UpdateCategoryComponent,canActivate: [AuthGuard] },
+      { path: 'viewquizzes', component: ViewQuizzesComponent ,canActivate: [AuthGuard]},
+      { path: 'addquizzes', component: AddQuizzesComponent,canActivate: [AuthGuard] },
+      { path: 'updatequiz/:id', component: UpdatequizComponent,canActivate: [AuthGuard] },
+      { path: 'viewquestion/:id', component: ViewQuestionComponent,canActivate: [AuthGuard] },
+      { path: 'addquestion/:id', component: AddQuestionComponent,canActivate: [AuthGuard] },
+      { path: 'userlist', component: UserlistComponent,canActivate: [AuthGuard] },
     ],
   },
 ];

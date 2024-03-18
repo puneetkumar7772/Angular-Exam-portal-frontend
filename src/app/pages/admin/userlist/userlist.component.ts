@@ -20,15 +20,11 @@ export class UserlistComponent {
   data: any = [];
   getUser() {
     this.userservice.getUser().subscribe((res) => {
-      console.log("232626", res);
       this.data = res;
-      console.log("9865455", this.data);
     });
   }
 
   deleteUser(id: number) {
-    console.log("user deleted successfully");
-    console.log("11111", id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't delete this user!",
@@ -45,13 +41,9 @@ export class UserlistComponent {
           icon: "success",
         });
         this.userservice.deleteUser(id).subscribe((res) => {
-          console.log("45468468", res);
           this.getUser();
         });
-      }else{
-        console.log("User deletion is failed")
       }
-
     });
   }
 }

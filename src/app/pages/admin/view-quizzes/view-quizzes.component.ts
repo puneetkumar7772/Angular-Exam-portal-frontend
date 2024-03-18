@@ -22,9 +22,7 @@ export class ViewQuizzesComponent {
   data: any = [];
   getQuizzes() {
     this.quizservice.viewQuizzes().subscribe((res) => {
-      console.log("2222222222", res);
       this.data = res;
-      console.log("55555", this.data);
     });
   }
 
@@ -45,9 +43,6 @@ export class ViewQuizzesComponent {
           icon: "success",
         });
         this.quizservice.deleteQuizzes(id).subscribe((res) => {
-          console.log("first", res);
-          console.log("quiz deleted ");
-
           this.getQuizzes();
         });
       } else {

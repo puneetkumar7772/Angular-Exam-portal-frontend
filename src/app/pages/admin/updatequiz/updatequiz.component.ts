@@ -38,7 +38,6 @@ export class UpdatequizComponent {
     this.route.params.subscribe((params) => {
       this.id = params["id"];
       this.quizzeservice.getQuizById(this.id).subscribe((res) => {
-        console.log("888888", res);
         this.data = res;
         if (this.data?.data) {
           this.updateQuizForm.patchValue({
@@ -50,24 +49,16 @@ export class UpdatequizComponent {
             status: this.data.data.status,
           });
         }
-        console.log("first", this.data?.data?.quizzeTitle);
-        console.log("second", this.data?.data?.category);
-        console.log("44444", this.data);
       });
     });
     this.categoryservice.viewCategory().subscribe((res) => {
-      console.log("9999999999", res);
       this.category = res;
-      console.log("88888", this.category);
     });
   }
 
   submitUpdatedQuiz() {
     let body = this.updateQuizForm.value;
-    console.log("555555", body);
     this.quizzeservice.getQuizByIdAndUpdate(this.id, body).subscribe((res) => {
-      console.log("77777777", res);
-      console.log("data updated successfully");
       this.snackBar.open("Quiz Updated successfully", "Close", {
         duration: 2000,
         horizontalPosition: "center",

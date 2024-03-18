@@ -57,7 +57,7 @@ export class StartquizComponent {
   submitQuiz() {
     {
       Swal.fire({
-        title: 'Do you want submit hte quiz',
+        title: 'Do you want submit the quiz',
         showCancelButton: true,
         confirmButtonText: 'Submit',
         denyButtonText: "Don't save",

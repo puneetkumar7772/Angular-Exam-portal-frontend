@@ -33,19 +33,14 @@ export class AddQuizzesComponent {
 
   ngOnInit() {
     this.categoryservice.viewCategory().subscribe((res) => {
-      console.log("9999999999", res);
       this.category = res;
-      console.log("88888", this.category);
     });
   }
 
   submitQuiz() {
     const body = this.addQuizForm.value;
-    console.log("5555555", body);
     this.quizzeservice.addQuizzes(body).subscribe(
       (res) => {
-        console.log("6666666", res);
-        console.log("quizze add successfully");
         this.snackBar.open("Quiz Add successfully", "Close", {
           duration: 2000,
           horizontalPosition: "center",
@@ -55,7 +50,6 @@ export class AddQuizzesComponent {
         this.router.navigate(["/admin/viewquizzes"]);
       },
       (error) => {
-        console.log(error);
         if (error.status === 409) {
           this.addQuizForm
             .get("quizzeTitle")

@@ -19,9 +19,7 @@ this.getCategory()
 
   getCategory(){
     this.categoryservice.viewCategory().subscribe((res)=>{
-      console.log("=======",res)
       this.data=res;
-      console.log("99999",this.data)
     })
   }
 
@@ -43,7 +41,6 @@ this.getCategory()
           icon: "success",
         });
         this.categoryservice.deleteCategory(id).subscribe((res)=>{
-          console.log("-------",res)
           this.getCategory()
          })
       } else {

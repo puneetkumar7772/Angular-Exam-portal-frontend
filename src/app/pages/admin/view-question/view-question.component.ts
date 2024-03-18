@@ -23,7 +23,6 @@ export class ViewQuestionComponent {
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       this.quizID = params.get("id");
-      console.log("shfdgxcjv,", this.quizID);
     });
     this.getQuestions();
 
@@ -31,11 +30,8 @@ export class ViewQuestionComponent {
 
   getQuestions() {
     const id=this.quizID
-    console.log("first",id)
     this.questionservice.getQuestionsbyQuizId(this.quizID).subscribe((res) => {
-      console.log("654646", res);
       this.data = res;
-      console.log("4546542", this.data);
     });
   }
   stripHtmlTags(htmlString: string): string {
@@ -61,7 +57,6 @@ export class ViewQuestionComponent {
           icon: "success",
         });
         this.questionservice.deleteQuestion(id).subscribe((res) => {
-          console.log("4635263", res);
           this.getQuestions();
         });
         

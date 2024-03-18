@@ -4,9 +4,10 @@ display: grid;
 grid-template-columns:40% 50%;
 gap: 10px;
 padding-top: 51px;
-background-image: linear-gradient(
+background-color: rgb(162, 162, 212);
+/* background-image: linear-gradient(
 #00416a,
-#e4e5e6);
+#e4e5e6); */
 height: 100%;
 }
 
@@ -22,7 +23,7 @@ p{
   font-weight: 500;
   padding-left: 50px;
   padding-right: 50px;
-  color: #fff;
+  color: #444;
 }
 h1{
   font-family:Georgia, 'Times New Roman', Times, serif;

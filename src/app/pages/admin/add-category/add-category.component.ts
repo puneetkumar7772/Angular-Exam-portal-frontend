@@ -26,11 +26,8 @@ export class AddCategoryComponent {
 
   submitForm() {
     const body = this.addCategoryForm.value;
-    console.log("+++++++++++", body);
-
     this.categoryservice.addCategory(body).subscribe(
       (res) => {
-        console.log("---------", res);
         this.snackBar.open("Category Added successfully", "Close", {
           duration: 2000,
           horizontalPosition: "center",
@@ -41,7 +38,6 @@ export class AddCategoryComponent {
         this.addCategoryForm.reset();
       },
       (error) => {
-        console.log(error);
         if (error.status === 409) {
           this.addCategoryForm
             .get("categoryName")

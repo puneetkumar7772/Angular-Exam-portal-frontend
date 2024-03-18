@@ -40,7 +40,6 @@ export class AddQuestionComponent {
   ngOnInit(){
     this.route.paramMap.subscribe((params) => {
       this.quizId = params.get("id");
-      console.log("shfdgxcjv,", this.quizId);
     });
   }
   updateDynamicOptions(formValues: any) {
@@ -64,9 +63,7 @@ export class AddQuestionComponent {
       answer: this.addQuestionForm.value.answer,
       quizID:this.quizId
     };
-    console.log("11111111111", body);
     this.questionservice.addQuestions(body).subscribe((res) => {
-      console.log("222222", res);
       this.snackBar.open("Question Added successfully", "Close", {
         duration: 2000,
         horizontalPosition: "center",

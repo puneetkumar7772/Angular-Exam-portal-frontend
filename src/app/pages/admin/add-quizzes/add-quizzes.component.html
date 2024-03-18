@@ -13,7 +13,7 @@
           </div>
           <mat-form-field class="w-100">
             <mat-label>Enter Description</mat-label>
-            <textarea type="text" name="title" placeholder="Enter Title" row="5" formControlName="quizzeDescription" matInput></textarea>
+            <textarea type="text" name="title" placeholder="Enter Description" row="5" formControlName="quizzeDescription" matInput></textarea>
           </mat-form-field>
           <div *ngIf="addQuizForm.get('quizzeDescription').touched && addQuizForm.get('quizzeDescription').invalid" class="error-message">
             Description is required.

@@ -29,7 +29,6 @@ export class UpdateCategoryComponent {
     this.route.params.subscribe((params) => {
       this.id = params["id"];
       this.categoryservice.getCategoryById(this.id).subscribe((res) => {
-        console.log("888888", res);
         this.data = res;
         if (this.data?.data) {
           this.updateCategoryForm.patchValue({
@@ -37,20 +36,15 @@ export class UpdateCategoryComponent {
             description: this.data.data.description,
           });
         }
-        console.log("second", this.data?.data?.category);
-        console.log("44444", this.data);
       });
     });
   }
 
   submitUpdateCategoryData() {
     const body = this.updateCategoryForm.value;
-    console.log("1111", body);
     this.categoryservice
       .getCategoryByIdAndUpdate(this.id, body)
       .subscribe((res) => {
-        console.log("8888", res);
-        console.log("data updated successfully");
         this.snackBar.open("Category Updated successfully", "Close", {
           duration: 2000,
           horizontalPosition: "center",
